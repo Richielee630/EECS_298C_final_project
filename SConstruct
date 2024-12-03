@@ -13,10 +13,17 @@ includes = '''
               ./cost-model/include/cost-analysis
               ./cost-model/include/abstract-hardware-model
               ./cost-model/src
+              /opt/homebrew/opt/boost/include
 '''
-env.Append(LINKFLAGS=['-lboost_program_options', '-lboost_filesystem', '-lboost_system'])
-env.Append(CXXFLAGS=['-std=c++17', '-lboost_program_options',  '-lboost_filesystem', '-lboost_system'])
-env.Append(LIBS=['-lboost_program_options',  '-lboost_filesystem', '-lboost_system' ])
+
+# Append Boost library paths and flags
+env.Append(CPPPATH=Split(includes))  # Include paths
+env.Append(LIBPATH=['/opt/homebrew/opt/boost/lib'])  # Library paths
+env.Append(LIBS=['boost_program_options', 'boost_filesystem', 'boost_system'])  # Boost libraries
+
+# Compiler and linker flags
+env.Append(CXXFLAGS=['-std=c++17'])  # Set C++17 standard
+env.Append(LINKFLAGS=[])  # Leave empty if no special linker flags are needed
 
 env.Append(CPPPATH = Split(includes))
 #env.Program("maestro-top.cpp")
