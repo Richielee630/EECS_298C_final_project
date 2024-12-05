@@ -16,10 +16,10 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 4096 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
-			TemporalMap(64,64) K;
-			Cluster(64, P);
+			TemporalMap(32,32) K;
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -31,10 +31,10 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 4096 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
-			TemporalMap(64,64) K;
-			Cluster(64, P);
+			TemporalMap(32,32) K;
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -46,10 +46,10 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 4096 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
-			TemporalMap(64,64) K;
-			Cluster(64, P);
+			TemporalMap(32,32) K;
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -63,10 +63,10 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
-			TemporalMap(64,64) K;
-			Cluster(64, P);
+			TemporalMap(32,32) K;
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -78,8 +78,8 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 1024, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
-			SpatialMap(1,1) N;
+			TemporalMap(64,64) M;
+			SpatialMap(4,4) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
 			SpatialMap(1,1) K;
@@ -94,7 +94,7 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
@@ -109,8 +109,8 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 1024, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
-			SpatialMap(1,1) N;
+			TemporalMap(64,64) M;
+			SpatialMap(4,4) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
 			SpatialMap(1,1) K;
@@ -125,7 +125,7 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
@@ -140,8 +140,8 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 1024, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
-			SpatialMap(1,1) N;
+			TemporalMap(64,64) M;
+			SpatialMap(4,4) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
 			SpatialMap(1,1) K;
@@ -156,7 +156,7 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 4096, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
+			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
@@ -171,8 +171,8 @@ Network Llama3_8B_Attention_Variant {
 		Type: GEMM
 		Dimensions { M 1024, N 1024, K 1024 }
 		Dataflow {
-			TemporalMap(1,1) M;
-			SpatialMap(1,1) N;
+			TemporalMap(64,64) M;
+			SpatialMap(4,4) N;
 			TemporalMap(64,64) K;
 			Cluster(64, P);
 			SpatialMap(1,1) K;
