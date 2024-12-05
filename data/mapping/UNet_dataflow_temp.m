@@ -5,7 +5,7 @@ Network UNet {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(64,64) C;
+			TemporalMap(1,1) C;
 			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
@@ -42,7 +42,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -52,13 +52,13 @@ Network UNet {
 		Dimensions { K: 128, C: 128, R: 3, S: 3, Y: 282, X: 282 }
 		Dataflow {
 			// Fill your dataflow here
-			SpatialMap(1,1) K;
+			SpatialMap(2,2) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -74,7 +74,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -91,7 +91,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -107,7 +107,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -124,7 +124,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -140,7 +140,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -157,7 +157,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -173,7 +173,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -190,7 +190,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -206,7 +206,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -222,7 +222,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -238,7 +238,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -255,7 +255,7 @@ Network UNet {
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(64, P);
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
