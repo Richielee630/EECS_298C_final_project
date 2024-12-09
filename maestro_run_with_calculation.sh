@@ -56,8 +56,8 @@ fi
 found && /Model-wise total L1/ {print; exit} 
 found'
 
-# Wait for 3 seconds
-sleep 3
+# Wait for 1 seconds
+sleep 1
 
 # Check if the CSV file exists after the script execution
 if [ ! -f "$csv_file" ]; then
