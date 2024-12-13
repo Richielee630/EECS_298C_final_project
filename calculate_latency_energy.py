@@ -11,11 +11,9 @@ def calculate_latency_energy(csv_file):
         # Strip leading/trailing spaces from column names
         data.columns = data.columns.str.strip()
 
-        # Ensure columns D, E, A, O, and AY exist
-        if data.shape[1] < 5:
-            raise ValueError("CSV file does not have enough columns (at least 5 required).")
-        
-        required_columns = ['Layer Number', 'L2 SRAM Size Req (Bytes)', 'Avg number of utilized PEs']
+        # Ensure required columns exist
+        required_columns = ['Layer Number', 'L2 SRAM Size Req (Bytes)', 
+                            'Avg number of utilized PEs', 'L1 SRAM Size Req (Bytes)']
         if not all(col in data.columns for col in required_columns):
             raise ValueError(f"CSV file is missing required columns. Expected columns: {required_columns}")
         
@@ -38,35 +36,46 @@ def calculate_latency_energy(csv_file):
         layer_numbers = data['Layer Number']
         avg_pes = data['Avg number of utilized PEs']
         l2_sram_size = data['L2 SRAM Size Req (Bytes)']
+        l1_sram_size = data['L1 SRAM Size Req (Bytes)']
 
         # Create an array of positions for each layer (to offset the bars side by side)
         positions = np.arange(len(layer_numbers))
 
-        # Create a figure and axis with two y-axes
+        # Create a figure and axis with three y-axes
         fig, ax1 = plt.subplots(figsize=(14, 7))
 
-        # Plot Avg Number of Utilized PEs with red bars (shifted to the left)
-        ax1.bar(positions - 0.2, avg_pes, 0.4, color='red', label='Avg number of utilized PEs')
+        # Plot Avg Number of Utilized PEs with red bars
+        bar_width = 0.2
+        ax1.bar(positions - bar_width, avg_pes, bar_width, color='red', label='Avg number of utilized PEs')
         ax1.set_xlabel('Layer Number')
         ax1.set_ylabel('Avg Number of Utilized PEs', color='red')
         ax1.tick_params(axis='y', labelcolor='red')
 
-        # Create a second y-axis for L2 SRAM Size Req (Bytes) using blue bars (shifted to the right)
+        # Create a second y-axis for L2 SRAM Size Req (Bytes) using blue bars
         ax2 = ax1.twinx()
-        ax2.bar(positions + 0.2, l2_sram_size, 0.4, color='blue', alpha=0.6, label='L2 SRAM Size Req (Bytes)')
+        ax2.bar(positions, l2_sram_size, bar_width, color='blue', alpha=0.6, label='L2 SRAM Size Req (Bytes)')
         ax2.set_ylabel('L2 SRAM Size Req (Bytes)', color='blue')
         ax2.tick_params(axis='y', labelcolor='blue')
 
-        # Set the tick positions for x-axis and y-axis to show the labels properly
+        # Create a third y-axis for L1 SRAM Size Req (Bytes) using green bars
+        ax3 = ax1.twinx()
+        ax3.spines["right"].set_position(("outward", 60))  # Offset the third axis to avoid overlap
+        ax3.bar(positions + bar_width, l1_sram_size, bar_width, color='green', alpha=0.6, label='L1 SRAM Size Req (Bytes)')
+        ax3.set_ylabel('L1 SRAM Size Req (Bytes)', color='green')
+        ax3.tick_params(axis='y', labelcolor='green')
+
+        # Set the tick positions for x-axis and labels
         ax1.set_xticks(positions)
         ax1.set_xticklabels(layer_numbers)
 
         # Adding title and grid
-        plt.title("Avg Number of Utilized PEs and L2 SRAM Size Req vs Layer Number")
+        plt.title("Avg Number of Utilized PEs, L2 SRAM Size Req, and L1 SRAM Size Req vs Layer Number")
         ax1.grid(True)
 
-        # Show the plot
+        # Adjust layout for clarity
         plt.tight_layout()
+
+        # Show the plot
         plt.show()
 
     except Exception as e:

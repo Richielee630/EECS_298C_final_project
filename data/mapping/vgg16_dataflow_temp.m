@@ -7,7 +7,7 @@ Network vgg16 {
 			// SpatialMap(Mapping size, Spatial Offset)
 			// TemporalMap(Mapping size, Temporal Offset)
 			SpatialMap(1,1) K; // 64(K)/1(MappingSize) = 64PE; the MappingSize is how many data point to be process in each PE
-			TemporalMap(Sz(C),Sz(C)) C; 
+			TemporalMap(64,64) C; 
 			TemporalMap(32,32) Y'; 
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
@@ -63,12 +63,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(128,128) C;
-			TemporalMap(16,16) Y'; 
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(128, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -79,12 +79,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(128,128) C;
-			TemporalMap(16,16) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(128, P);
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -95,12 +95,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(256,256) C;
-			TemporalMap(8,8) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(256, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -111,12 +111,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(256,256) C;
-			TemporalMap(8,8) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(256, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -127,12 +127,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(256,256) C;
-			TemporalMap(8,8) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(256, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -143,12 +143,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(512,512) C;
-			TemporalMap(4,4) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(512, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -159,12 +159,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(512,512) C;
-			TemporalMap(4,4) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(512, P); 
+			Cluster(64, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -175,12 +175,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(512,512) C;
-			TemporalMap(2,2) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(512, P); 
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}
@@ -191,12 +191,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(512,512) C;
-			TemporalMap(2,2) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(512, P); 
+			Cluster(128, P); 
 			SpatialMap(1,1) C;
 		}
 	}
@@ -207,12 +207,12 @@ Network vgg16 {
 		Dataflow {
 			// Fill your dataflow here
 			SpatialMap(1,1) K;
-			TemporalMap(512,512) C;
-			TemporalMap(2,2) Y';
+			TemporalMap(64,64) C;
+			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
-			Cluster(512, P); 
+			Cluster(128, P);
 			SpatialMap(1,1) C;
 		}
 	}

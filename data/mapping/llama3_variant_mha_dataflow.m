@@ -65,7 +65,7 @@ Network Llama3_8B_Attention_Variant {
 		Dataflow {
 			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
-			TemporalMap(32,32) K;
+			TemporalMap(64,64) K;
 			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
@@ -97,7 +97,7 @@ Network Llama3_8B_Attention_Variant {
 			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
-			Cluster(64, P);
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -128,7 +128,7 @@ Network Llama3_8B_Attention_Variant {
 			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
-			Cluster(64, P);
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
@@ -159,7 +159,7 @@ Network Llama3_8B_Attention_Variant {
 			TemporalMap(64,64) M;
 			SpatialMap(1,1) N;
 			TemporalMap(64,64) K;
-			Cluster(64, P);
+			Cluster(16, P);
 			SpatialMap(1,1) K;
 		}
 	}
