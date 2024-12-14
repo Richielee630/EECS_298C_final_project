@@ -7,7 +7,7 @@ Network UNet {
 			SpatialMap(1,1) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
-			TemporalMap(1,1) X';
+			TemporalMap(4,4) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
 			Cluster(64, P);
@@ -167,7 +167,7 @@ Network UNet {
 		Dimensions { K: 512, C: 1024, R: 2, S: 2, Y: 28, X: 28 }
 		Dataflow {
 			// Fill your dataflow here
-			SpatialMap(1,1) K;
+			SpatialMap(2,2) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
@@ -216,7 +216,7 @@ Network UNet {
 		Dimensions { K: 512, C: 512, R: 2, S: 2, Y: 52, X: 52 }
 		Dataflow {
 			// Fill your dataflow here
-			SpatialMap(1,1) K;
+			SpatialMap(2,2) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
@@ -265,7 +265,7 @@ Network UNet {
 		Dimensions { K: 128, C: 256, R: 2, S: 2, Y: 100, X: 100 }
 		Dataflow {
 			// Fill your dataflow here
-			SpatialMap(1,1) K;
+			SpatialMap(2,2) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
 			TemporalMap(1,1) X';
