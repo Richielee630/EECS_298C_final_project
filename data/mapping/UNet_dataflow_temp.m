@@ -7,7 +7,7 @@ Network UNet {
 			SpatialMap(1,1) K;
 			TemporalMap(64,64) C;
 			TemporalMap(32,32) Y';
-			TemporalMap(4,4) X';
+			TemporalMap(1,1) X';
 			TemporalMap(Sz(R),Sz(R)) R;
 			TemporalMap(Sz(S),Sz(S)) S;
 			Cluster(64, P);
